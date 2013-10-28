@@ -1,5 +1,4 @@
 
-
 $ yum install ssmtp sendmail -y
 $ /etc/init.d/sendmail stop ; chkconfig sendmail off
 
