@@ -1,0 +1,3 @@
+brew tap homebrew/versions
+brew install gcc49
+brew install suricata --cc=gcc-4.9
