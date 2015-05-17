@@ -1,7 +1,8 @@
-How to install splunk 6.0.2 forwarder on CentOs
+##Setting up an Configuring Splunk Fowarder (6.02) for CentOs 
 
-Download the correct splunk forwarder for your system
-https://www.splunk.com/download/universalforwarder
+
+######Download the correct splunk forwarder for your system
+[Splunk Universal Fowarder](https://www.splunk.com/download/universalforwarder)
 
 ```
 # rpm -Uvh splunkforwarder-6.0.2-196940.i386.rpm
@@ -12,10 +13,12 @@ Preparing...                ########################################### [100%]
    complete
 ```
 
+######Edit user info for authentication
 ```
-/opt/splunkforwarder/bin # ./splunk edit user admin -password NEWPASS -auth
-configure recieve data on splunk server settings --> forwarding and recieving --> configure recieving add port 9997
+/opt/splunkforwarder/bin # ./splunk edit user admin -password <NEWPASS> -auth
 ```
+
+######Configure forwarding:
 ```
 /opt/splunkforwarder/bin # ./splunk add forward-server {ip of server}:9997
 
@@ -29,20 +32,21 @@ configure recieve data on splunk server settings --> forwarding and recieving --
 ```
 
 
-Added monitor of '/var/log'.
+######Added monitor of ```/var/log```
 
 ```
 /opt/splunkforwarder/bin # ./splunk add monitor /var/log
 ```
 
-enables boot-start
+######enables boot-start
 
 ```
 /opt/splunkforwarder/bin # ./splunk enable boot-start
 Init script installed at /etc/init.d/splunk.
 Init script is configured to run at boot.
+```
 
-chkconfig splunk on
+######chkconfig splunk on
 
 ```
 /opt/splunkforwarder/bin # chkconfig splunk on
