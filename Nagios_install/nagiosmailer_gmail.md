@@ -41,6 +41,8 @@ $ which ssmtp
 ```
 $ cp /usr/sbin/sendmail ~/sendmail.old
 ```
+
+```
 $ rm /usr/sbin/sendmail
 ```
 
@@ -63,6 +65,6 @@ echo "testing for nagios alerts"|mail -s "test nagiosalerts" emailid@example.com
 $  yum install mailx -y 
 ```
 
-change contact file to match recipient 
+######change contact file to match recipient 
 
 ```restart nagios {nagrestart}```
