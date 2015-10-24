@@ -19,4 +19,6 @@
 
 ######login at:
 
-```http://{ipaddress}/nagios```
+```
+http://{ipaddress}/nagios
+```
