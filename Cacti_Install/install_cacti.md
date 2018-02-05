@@ -19,31 +19,46 @@ Once Cent OS 6.3 is installed login as “root” with the password you configur
 
 - Installing Apache:
 <br>
-```# yum install httpd httpd-devel -y```
+
+```
+# yum install httpd httpd-devel -y
+```
 
 - Install MySQL:
 <br>
-```# yum install mysql mysql-server -y```
+```
+# yum install mysql mysql-server -y
+```
 
 - Install PHP:
 <br>
-```# yum install php-mysql php-pear php-common php-gd php-devel php php-mbstring php-cli php-mysql```
+```
+# yum install php-mysql php-pear php-common php-gd php-devel php php-mbstring php-cli php-mysql
+```
 
 - Install PHP-SNMP:
 <br>
-```# yum install php-snmp```
+```
+# yum install php-snmp
+```
 
 - Install NET-SNMP
 <br>
-```# yum install net-snmp-utils p net-snmp-libs php-pear-Net-SMTP```
+```
+# yum install net-snmp-utils p net-snmp-libs php-pear-Net-SMTP
+```
 
 - Install RRDTool
 <br>
-```# yum install rrdtool```
+```
+# yum install rrdtool
+```
 
 - Install UnZip:
 <br>
-```# yum install unzip```
+```
+# yum install unzip
+```
 
 
 ### Now that all the required packages are installed, we must start their services running.
