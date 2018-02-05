@@ -1,9 +1,9 @@
-##Installing Cacti
+## Installing Cacti
 
 
-###Installing and configuring Cacti with Cent OS 6.3
+### Installing and configuring Cacti with Cent OS 6.3
 
-###Pre-requecs
+### Prerequisites
 Before we can install Cacti, we must install the following packages.
 
 - Apache: A Web server to display network graphs created by PHP and RRDTool.
