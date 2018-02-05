@@ -65,49 +65,74 @@ Once Cent OS 6.3 is installed login as “root” with the password you configur
 
 Start Apache
 <br>
-```# service httpd start```
+```
+# service httpd start
+```
 
 Start MySQL
 <br>
-```# service mysqld start```
+```
+# service mysqld start
+```
 
 Start SNMP
 <br>
-```# service snmpd start```
+```
+# service snmpd start
+```
 
 Setup start up links for Apache, MySQL and SNMP
 Apache
-```# chkconfig httpd on```
+```
+# chkconfig httpd on
+```
 
 MySQL
 <br>
-```# chkconfig mysqld on```
+```
+# chkconfig mysqld on
+```
 
 SNMP
 <br>
-```# chkconfig snmpd on```
+```
+# chkconfig snmpd on
+```
 
 
 ###Add the Extra Packages for Enterprise Linux (EPEL) repository (64-Bit CentOS 6 only). This is where the Cacti installation is downloaded from.
-```# wget http://download.fedoraproject.org/pub/e ... noarch.rpm```
-```# rpm -ivh epel-release-6-8.noarch.rpm```
+```
+# wget http://download.fedoraproject.org/pub/e ... noarch.rpm
+```
+
+```
+# rpm -ivh epel-release-6-8.noarch.rpm
+```
 
 ###OR
-```# yum install epel-release```
+```
+# yum install epel-release
+```
 
 
 Download and Install Cacti
 <br>
-```# yum install cacti```
+```
+# yum install cacti
+```
 
 
 Setup MySQL Server for Cacti
 <br>
-```# mysqladmin -u root password Desired-Password-Here```
+```
+# mysqladmin -u root password Desired-Password-Here
+```
 
 
 Create MySQL Cacti Database
-```# mysql -u root -p```
+```
+# mysql -u root -p
+```
 
 ```
 mysql> create database cacti;
@@ -120,25 +145,34 @@ mysql> quit;
 Setup Cacti Tables in MySQL
 To being, we need to know the location of the cacti.sql file where the tables will be installed. Use the following command to show the location.
 
-```# rpm -ql cacti | grep cacti.sql```
+```
+# rpm -ql cacti | grep cacti.sql
+```
 
 Sample Output (output may vary depending on version)
-```/usr/share/cacti-0.8.7d/cacti.sql```
+```
+/usr/share/cacti-0.8.7d/cacti.sql
+```
 
 
 Now we need to install the tables into the cacti.sql file. Use the following command to do this, replace the green text for the location shown by the command above.
 
-```# mysql -u cacti -p cacti < /usr/share/cacti-0.8.7d/cacti.sql```
+```
+# mysql -u cacti -p cacti < /usr/share/cacti-0.8.7d/cacti.sql
+```
 
 
 Configure MySQL settings for Cacti
 Open db.php with your preferred editor
 
-```# vim /etc/cacti/db.php```
+```
+# vim /etc/cacti/db.php
+```
 
 Make the following changes according to your config
 
-```/* make sure these values reflect your actual database/host/user/password */
+```
+/* make sure these values reflect your actual database/host/user/password */
 $database_type = "mysql";
 $database_default = "cacti";
 $database_hostname = "localhost";
@@ -153,7 +187,9 @@ You need to allow access to Cacti from the ipranges you require. By default I ch
 
 Open /etc/httpd/conf.d/cacti.conf with your preferred editor
 
-```# vim /etc/httpd/conf.d/cacti.conf```
+```
+# vim /etc/httpd/conf.d/cacti.conf
+```
 
 Add the following section at the bottom of the config file
 
@@ -169,27 +205,39 @@ Allow from all
 
 In order for this change to take effect, Apache must be restarted. Issue the following command to restart Apache
 
-```# service httpd restart```
+```
+# service httpd restart
+```
 
 Setting Cron for Cacti
 Open the Cacti cron file and and uncomment the line to enable the poller.php to run every5 mins.
 
-```#vim /etc/cron.d/cacti```
+```
+#vim /etc/cron.d/cacti
+```
 
 Delete or uncomment out the # in the following line
 
-```#*/5 * * * * cacti /usr/bin/php /usr/share/cacti/poller.php > /dev/null 2>&1```
+```
+#*/5 * * * * cacti /usr/bin/php /usr/share/cacti/poller.php > /dev/null 2>&1
+```
 
 Configure firewall to allow access to Cacti from the web
 Open the iptables file
 
-```# vim /etc/sysconfig/iptables```
+```
+# vim /etc/sysconfig/iptables
+```
 
 Add the following line 
-```# -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT```
+```
+# -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+```
 
 Restart iptables
-```# service iptables restart```
+```
+# service iptables restart
+```
 
 
 Complete Cacti Installation via web installer
