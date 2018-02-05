@@ -47,6 +47,7 @@ Once Cent OS 6.3 is installed login as “root” with the password you configur
 
 - Install NET-SNMP
 <br>
+
 ```
 # yum install net-snmp-utils p net-snmp-libs php-pear-Net-SMTP
 ```
