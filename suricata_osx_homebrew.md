@@ -1,4 +1,4 @@
-#####Installing Suricata IDS on an OSX system using Homebrew
+##### Installing Suricata IDS on an OSX system using Homebrew
 
 ```brew tap homebrew/versions```
 
@@ -6,4 +6,4 @@
 
 ```brew install suricata --cc=gcc-4.9```
 
-######copy over rules and yaml file from your own config.
+###### copy over rules and yaml file from your own config.
