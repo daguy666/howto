@@ -26,18 +26,21 @@ Once Cent OS 6.3 is installed login as “root” with the password you configur
 
 - Install MySQL:
 <br>
+
 ```
 # yum install mysql mysql-server -y
 ```
 
 - Install PHP:
 <br>
+
 ```
 # yum install php-mysql php-pear php-common php-gd php-devel php php-mbstring php-cli php-mysql
 ```
 
 - Install PHP-SNMP:
 <br>
+
 ```
 # yum install php-snmp
 ```
@@ -50,12 +53,14 @@ Once Cent OS 6.3 is installed login as “root” with the password you configur
 
 - Install RRDTool
 <br>
+
 ```
 # yum install rrdtool
 ```
 
 - Install UnZip:
 <br>
+
 ```
 # yum install unzip
 ```
@@ -65,6 +70,7 @@ Once Cent OS 6.3 is installed login as “root” with the password you configur
 
 Start Apache
 <br>
+
 ```
 # service httpd start
 ```
